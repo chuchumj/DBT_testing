@@ -1,0 +1,30 @@
+
+version: 2
+
+models:
+    - name: item_salesperson
+      description: "item_salesperson_model"
+      columns:
+          - name: JE_Code
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+
+    - name: item
+      description: "item_model"
+      columns:
+          - name: JE_Code
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+
+    # - name: item
+    #   description: "testing_item"
+    #   columns:
+    #       - name: item
+    #         description: "The primary key for this table"
+    #         tests:
+    #             - unique
+    #             - not_null
