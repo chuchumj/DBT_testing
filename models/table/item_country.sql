@@ -1,12 +1,12 @@
-{% set item_colmumns = ['item', 'JE_Code' ] %}
+{% set colmumn_list = ['item','JE_Code', 'Store', 'Country', 'Region', 'Date'] %} 
 
 {{ config(materialized='table') }}
 
 
 SELECT 
-{% for i in item_colmumns %}
- concat(i, "_IDH") as item_idh
+if ( {{concatenate_strings('JE', 'Code') }} = 'I-2261','invalid', 'valid') as validity, 
+{% for columns in colmumn_list %}
+{{columns}},
 {% endfor %}
-FROM `item-sales.household.item_sales_detail` 
-where item = 'Toaster'
+FROM {{ ref('item') }}
 limit 10

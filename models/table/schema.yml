@@ -10,6 +10,11 @@ models:
             tests:
                 - unique
                 - not_null
+ 
+      columns:
+          - name: Store
+      columns:
+          - name: Region
 
     - name: item
       description: "item_model"
@@ -19,6 +24,10 @@ models:
             tests:
                 - unique
                 - not_null
+      columns:
+          - name: Store
+      columns:
+          - name: Region
 
     # - name: item
     #   description: "testing_item"
