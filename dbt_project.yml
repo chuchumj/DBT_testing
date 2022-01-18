@@ -39,5 +39,8 @@ models:
           materialized: view
       table:
           materialized: view
+      dimension:
+        # materialized: 'incremental'
+       
       
           
